@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
+import "./index.css";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-  align-items: center;
+  position: relative;
   flex-direction: column;
   justify-content: center;
 `;
@@ -14,12 +14,20 @@ const Title = styled.h1`
   font-size: 30px;
   text-align: center;
 `;
-const Form = styled.form``;
+const Form = styled.form`
+  width: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
 
 const Grp = styled.div`
-  display: flex;
-  margin: 100px;
-  align-items: center;
+  margin: 10px 0px;;
 `;
 
 const Btn = styled.button`
@@ -32,14 +40,13 @@ const Btn = styled.button`
   cursor: pointer;
 `;
 const Item = styled.div`
-  display: flex;
-  background-color: yellow;
-  width: 300px;
+  width: 600px;
   height: 50px;
-  border-radius: 10px;
-  justify-content: center;
+  display: flex;
   align-items: center;
-  margin: 10px 0px;
+  position: relative;
+  
+  
 `
 const Username = styled.h3`
   font-size: 20px;
@@ -51,22 +58,31 @@ const Email = styled.p`
   font-size: 15px;
   font-weight: 300;
 `
+const Person = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+
+`
 
 const App = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [pwd, setPwd] = useState("");
   const [data, setData] = useState([]);
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (username && email) {
-      const person = { username, email };
+    if (username && email && pwd) {
+      const person = { username, email , pwd};
       setData((item) => {
         return [...item, person];
       });
       console.log(data);
       setUsername("");
       setEmail("");
+      setPwd("");
     } else {
       console.log("Empty values");
     }
@@ -75,7 +91,7 @@ const App = () => {
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
-        <Title>Welcome to Morocco</Title>
+        <Title>Authentication</Title>
         <Grp>
           <span>Username :</span>
           <input
@@ -94,16 +110,29 @@ const App = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </Grp>
+
+        <Grp>
+          <span>Password : </span>
+          <input
+            type="password"
+            name="psw"
+            value={pwd}
+            onChange={(e) => setPwd(e.target.value)}
+          />
+        </Grp>
         
         <Btn type="submit">Sign up</Btn>
       </Form>
       {
         data.map((item,index)=>{
-          const {id,username,email}=item;
+          const {id,username,email,pwd}=item;
           return(
             <Item  key={id}>
+              <Person>
                 <Username>{username}</Username>
                 <Email>{email}</Email>
+                <Email>{pwd}</Email>
+              </Person>
             </Item>
           )
         })
