@@ -21,7 +21,7 @@ const Product = ({ image, username }) => {
 export default Product;
 
 const Container = styled.div`
-  background-color: #212122b2;
+  background-color: #044d77;
   width: 300px;
   height: 300px;
   display: flex;
@@ -42,7 +42,7 @@ const Image = styled.img`
 `;
 
 const Icon = styled.div`
-  background-color: black;
+  background-color: #0778b97b;
   padding: 10px;
   border-radius: 10px;
   display: flex;

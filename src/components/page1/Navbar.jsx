@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <Container>
       <Badge badgeContent={4} color="primary">
-        <MdFavorite size={30} color="white" onClick={()=>navigate('/favorite', { replace: true })} />
+        <MdFavorite className="favicon" size={30} color="white" onClick={()=>navigate('/favorite', { replace: true })} />
       </Badge>
     </Container>
   );
@@ -25,8 +25,11 @@ top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #212121;
+  background-color: #044d77;
   z-index: 1000;
   height: 10vh;
   width: 100%;
+  .favicon{
+    cursor: pointer;
+  }
 `;

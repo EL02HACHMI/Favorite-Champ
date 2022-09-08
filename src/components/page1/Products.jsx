@@ -5,6 +5,7 @@ import Product from "./Product";
 const Products = () => {
   return (
     <Container>
+      <Title>Choose your <b>favorite</b> champ</Title>
       <Wrapper>
         {data.map((item) => {
           return (
@@ -24,18 +25,32 @@ export default Products;
 
 const Container = styled.div`
   position: relative;
+  font-family: 'Open Sans', sans-serif;
   top: 10vh;
+  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #bcd9eb;
   width: 100%;
   height: 100%;
-  background-color: #837a7a;
+`;
+
+
+const Title = styled.h3`
+  font-weight: 500;
+ font-size: 30px;
+ text-transform: uppercase;
+ margin: 10px 0px;
+ b{
+  color: #044d77;
+  font-weight: bold;
+  text-decoration: underline;
+ }
 `;
 
 const Wrapper = styled.div`
   width: 90%;
-  background-color: beige;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
