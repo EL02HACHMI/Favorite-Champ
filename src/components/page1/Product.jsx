@@ -1,18 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { MdFavorite } from "react-icons/md";
 
-const Product = ({ image, username }) => {
-
-
+const Product = ({item }) => {
 
     
   
   return (
     <Container>
-      <Image src={image} alt="image" />
+      <Image src={item.image} alt="image" />
       <Icon className="icon">
-        <MdFavorite className="ic"   size={25} color="white" onClick={()=>console.log("hello")}/>
+        <MdFavorite className="ic"  size={25} color="white" />
       </Icon>
     </Container>
   );
@@ -42,7 +40,7 @@ const Image = styled.img`
 `;
 
 const Icon = styled.div`
-  background-color: #1d4dcf;
+  background-color: #1d4ccf24;
   padding: 10px;
   border-radius: 10px;
   display: flex;

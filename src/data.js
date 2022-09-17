@@ -1,12 +1,12 @@
-import Alistar from "../images/Alistar.jpg";
-import Akali from "../images/Akali.jpg";
-import Ahri from "../images/Ahri.jpg";
-import Irelia from "../images/Irelia.jpg";
-import Kayn from "../images/Kayn.jpg";
-import Leesin from "../images/Leesin.jpg";
-import Lissandra from "../images/Lissandra.jpg";
-import Rengar from "../images/Rengar.jpg";
-import Tahm from "../images/Tahm.jpg";
+import Alistar from "./images/Alistar.jpg";
+import Akali from "./images/Akali.jpg";
+import Ahri from "./images/Ahri.jpg";
+import Irelia from "./images/Irelia.jpg";
+import Kayn from "./images/Kayn.jpg";
+import Leesin from "./images/Leesin.jpg";
+import Lissandra from "./images/Lissandra.jpg";
+import Rengar from "./images/Rengar.jpg";
+import Tahm from "./images/Tahm.jpg";
 
  const data = [
   {

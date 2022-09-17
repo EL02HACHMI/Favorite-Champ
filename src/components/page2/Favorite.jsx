@@ -1,15 +1,24 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import Alistar from '../images/Alistar.jpg'
-import Irelia from '../images/Irelia.jpg'
-import Rengar from '../images/Rengar.jpg'
-import Tahm from '../images/Tahm.jpg'
+import Alistar from './../../images/Alistar.jpg'
+import Irelia from './../../images/Irelia.jpg'
+import Rengar from './../../images/Rengar.jpg'
+import Tahm from './../../images/Tahm.jpg'
 import {AiFillDelete} from 'react-icons/ai'
+
+
+import { useGlobalContext } from '../../ContextApi';
+
+
+
+
+
+
 const Favorite = () => {
 
-  let navigate=useNavigate()
 
+  let navigate=useNavigate()  
   return (
     <Container>
       <Wrapper>

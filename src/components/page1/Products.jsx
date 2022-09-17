@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import data from "./data";
+import data from "../../data";
 import Product from "./Product";
 const Products = () => {
   return (
@@ -9,8 +9,7 @@ const Products = () => {
         {data.map((item) => {
           return (
             <Product
-              image={item.image}
-              username={item.username}
+              item={item}
               key={item.id}
             />
           );
