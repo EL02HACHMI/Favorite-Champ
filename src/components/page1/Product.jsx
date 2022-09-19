@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { MdFavorite } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Product = ({item }) => {
 
@@ -8,7 +9,9 @@ const Product = ({item }) => {
   
   return (
     <Container>
-      <Image src={item.image} alt="image" />
+       <Link to={`/champs/${item.id}`}>
+        <Image src={item.image} alt="image" />
+       </Link>
       <Icon className="icon">
         <MdFavorite className="ic"  size={25} color="white" />
       </Icon>
