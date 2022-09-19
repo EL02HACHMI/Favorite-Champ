@@ -10,6 +10,8 @@ const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
 
+  const  [searchterm,setSearchTerm]=useState('')
+
   return (
     <AppContext.Provider value={{}}>
       {children}
