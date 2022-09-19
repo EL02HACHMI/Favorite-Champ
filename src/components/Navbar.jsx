@@ -9,7 +9,7 @@ const Navbar = () => {
 
   let navigate=useNavigate();
   
-  
+    
   return (
     <Container>
       <Search/>

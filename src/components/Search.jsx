@@ -3,7 +3,12 @@ import styled from "styled-components";
 import { BiSearch } from "react-icons/bi";
 import { useState } from "react";
 import data from "../data";
+import { useNavigate } from "react-router-dom";
 const Search = () => {
+
+
+
+  const navigate=useNavigate()
   const [filterData, setFilterData] = useState([]);
 
   const handleSubmit = (e) => {
@@ -23,6 +28,7 @@ const Search = () => {
     }
   };
 
+
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
@@ -40,7 +46,9 @@ const Search = () => {
       {filterData.length && (
         <BottomBar>
           {filterData.slice(0, 5).map((value, key) => {
-            return <Filtertitle>{value.username}</Filtertitle>;
+            console.log(value)
+            return <Filtertitle onClick={()=>navigate(`/champs/${value.id}`)}>{value.username}</Filtertitle>;
+
           })}
         </BottomBar>
       )}
@@ -111,6 +119,7 @@ const Filtertitle = styled.h3`
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   text-align: center;
+  cursor: pointer;
   padding: 10px 0px;
   &:hover {
     background-color: #1154b8;

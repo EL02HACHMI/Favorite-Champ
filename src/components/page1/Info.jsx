@@ -10,8 +10,10 @@ const Info = () => {
   return (
     <Container>
       <Wrapper>
-
+        <Head>
+      <Btn onClick={()=>navigate('/')}>home</Btn>
         <h2>Champion Card</h2>
+        </Head>
      
        <Card key={id}>
           <Img>
@@ -20,15 +22,12 @@ const Info = () => {
           <Grp>
             <Title>{username}</Title>
             <Desc>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae, voluptate natus delectus doloribus minima error
-              quidem facilis pariatur alias impedit!
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione culpa, at eligendi, corrupti magni dolor alias laboriosam vitae, reprehenderit voluptas explicabo. Amet facere quo impedit dignissimos vitae maxime rerum nobis?
             </Desc>
           </Grp>
         </Card>
       
       </Wrapper>
-      <Btn onClick={()=>navigate('/')}>Back home</Btn>
     </Container>
   );
 };
@@ -38,17 +37,22 @@ export default Info;
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: #5434a0;
+  background-color: #14275e;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "Roboto", sans-serif;
 `;
-
+ 
+const Head = styled.div`
+width: 100%;
+  display:flex;
+  justify-content: space-around;
+  margin: 10px 0px;
+`;
 const Wrapper = styled.div`
   width: 90%;
-  background-color: #083f5f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +62,9 @@ const Wrapper = styled.div`
   h2{
     padding: 10px 0px; 
     font-size: 30px;
-    text-decoration : underline ;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: capitalize;
   }
 `;
 
@@ -67,6 +73,8 @@ padding: 10px;
   width: 100%;
   height: 100%;
   flex-direction: row;
+  background-color: #0F2669;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,10 +106,12 @@ const Grp = styled.div`
 const Title = styled.h3`
   font-size: 25px;
   font-weight: 500;
+  
 `;
 const Desc = styled.p`
   font-weight: 300;
   width: 85%;
+  line-height: 2rem;
   text-align: justify ;
   padding: 10px 0px;
   letter-spacing: 1px;
@@ -114,8 +124,10 @@ font-family: 'Roboto',sans-serif;
   color: white;
   padding: 10px;
   border-radius: 10px;
-  background-color: #391a559b;
+  color: #0F2669;
+  background-color: #ffffff;
+  font-weight: 600;
   cursor: pointer;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 1px;
 `;
