@@ -5,10 +5,7 @@ import { useState } from "react";
 import data from "../data";
 import { useNavigate } from "react-router-dom";
 const Search = () => {
-
-
-
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const [filterData, setFilterData] = useState([]);
 
   const handleSubmit = (e) => {
@@ -16,7 +13,7 @@ const Search = () => {
   };
 
   const handleChange = (e) => {
-    const SearchWord =e.target.value
+    const SearchWord = e.target.value;
     const newfilter = data.filter((item) => {
       return item.username.toLowerCase().includes(SearchWord.toLowerCase());
     });
@@ -27,7 +24,6 @@ const Search = () => {
       setFilterData(newfilter);
     }
   };
-
 
   return (
     <Container>
@@ -43,12 +39,14 @@ const Search = () => {
           </Btn>
         </FormGrp>
       </Form>
-      {filterData.length && (
+      {filterData.length != 0 && (   
         <BottomBar>
           {filterData.slice(0, 5).map((value, key) => {
-            console.log(value)
-            return <Filtertitle onClick={()=>navigate(`/champs/${value.id}`)}>{value.username}</Filtertitle>;
-
+            return (
+              <Filtertitle onClick={() => navigate(`/champs/${value.id}`)}>
+                {value.username}
+              </Filtertitle>
+            );
           })}
         </BottomBar>
       )}

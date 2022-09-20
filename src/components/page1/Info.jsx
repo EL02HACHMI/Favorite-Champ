@@ -82,6 +82,8 @@ padding: 10px;
 const Img = styled.div`
   padding: 10px;
   flex: 1;
+  width: 500px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
