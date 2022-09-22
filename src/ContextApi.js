@@ -19,7 +19,11 @@ const AppProvider = ({ children }) => {
 
   const addToFavorites=(idChamp)=>{
       const champs=data.find((champo)=>champo.id===idChamp)
-      setFavorites((prev)=>[...prev,champs])        
+      const alreadyFav=favorites.find((fav)=>fav.id === idChamp)  
+      if(alreadyFav)return
+      const updateFav=[...favorites,champs]
+      setFavorites(updateFav)      
+      console.log(favorites)
   }
 
   const removeFromFavorites=(idChamp)=>{
