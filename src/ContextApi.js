@@ -1,7 +1,6 @@
-import React, { Children, createContext, useState } from 'react'
+import React, { createContext, useState } from 'react'
 import data from './data'
 import  {useContext} from 'react'
-import { ConstructionOutlined } from '@mui/icons-material';
 export const ContextApi = createContext();
 
 
@@ -10,8 +9,6 @@ const AppContext = React.createContext()
 
 
 const AppProvider = ({ children }) => {
-
-  const  [searchterm,setSearchTerm]=useState('')
 
   const [favorites,setFavorites]=useState([])
 
@@ -22,8 +19,7 @@ const AppProvider = ({ children }) => {
       const alreadyFav=favorites.find((fav)=>fav.id === idChamp)  
       if(alreadyFav)return
       const updateFav=[...favorites,champs]
-      setFavorites(updateFav)      
-      console.log(favorites)
+      setFavorites(updateFav) 
   }
 
   const removeFromFavorites=(idChamp)=>{
