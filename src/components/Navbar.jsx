@@ -4,16 +4,17 @@ import { MdFavorite } from "react-icons/md";
 import Search from './Search.jsx'
 import { Badge } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useGlobalContext } from "../ContextApi.js";
 const Navbar = () => {
 
 
   let navigate=useNavigate();
-  
-    
+  const {favorites}=useGlobalContext();
+
   return (
     <Container>
       <Search/>
-      <Badge className="grp1" badgeContent={4} color="primary">
+      <Badge className="grp1" badgeContent={favorites.length} color="primary">
         <MdFavorite size={30} color="white" className="favicon" onClick={()=>navigate('/favorite', { replace: true })} />
       </Badge>
     </Container>

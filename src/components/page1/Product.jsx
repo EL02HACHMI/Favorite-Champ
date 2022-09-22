@@ -2,9 +2,12 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { MdFavorite } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "../../ContextApi";
 
 const Product = ({item }) => {
 
+
+  const {addToFavorites}=useGlobalContext();
     
   
   return (
@@ -13,7 +16,7 @@ const Product = ({item }) => {
         <Image src={item.image} alt="image" />
        </Link>
       <Icon className="icon">
-        <MdFavorite className="ic"  size={25} color="white" />
+        <MdFavorite className="ic"  size={25} color="white" onClick={()=>addToFavorites(item.id)}/>
       </Icon>
     </Container>
   );

@@ -17,52 +17,28 @@ import { useGlobalContext } from '../../ContextApi';
 
 const Favorite = () => {
 
+  const {favorites,removeFromFavorites}=useGlobalContext();
+
 
   let navigate=useNavigate()  
   return (
     <Container>
       <Wrapper>
 
-
-        <Card>
+      {favorites.map((champ)=>  
+        <Card key={champ.id}>
           <Left>
-            <Image src={Alistar}/>
+            <Image src={champ.image}/>
           </Left>
           <Right>
-            <Title>Alistar</Title>
-            <AiFillDelete className='IconAi' size={25}/>
+            <Title>{champ.username}</Title>
+            <AiFillDelete className='IconAi' size={25}  onClick={()=>removeFromFavorites(champ.id)}/>
           </Right>
         </Card>
+        )
+        }
 
-        <Card>
-          <Left>
-            <Image src={Irelia}/>
-          </Left>
-          <Right>
-            <Title>Irelia</Title>
-            <AiFillDelete className='IconAi' size={25}/>
-          </Right>
-        </Card>
-
-        <Card>
-          <Left>
-            <Image src={Rengar}/>
-          </Left>
-          <Right>
-            <Title>Rengar</Title>
-            <AiFillDelete className='IconAi' size={25}/>
-          </Right>
-        </Card>
-
-        <Card>
-          <Left>
-            <Image src={Tahm}/>
-          </Left>
-          <Right>
-            <Title>Tahm</Title>
-            <AiFillDelete className='IconAi' size={25}/>
-          </Right>
-        </Card>
+       
         
       </Wrapper>
       <Button onClick={()=>navigate('/')}>Go Back</Button>
@@ -84,6 +60,7 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  min-height: 100vh;
 font-family: 'Roboto',sans-serif;
 
   flex-direction: column;
@@ -96,7 +73,6 @@ font-family: 'Roboto',sans-serif;
 
 const Wrapper = styled.div`
   width: 80%;
-  background-color: #425899;
   height: 90%;
   display: flex;
   justify-content: center;

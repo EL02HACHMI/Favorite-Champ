@@ -118,8 +118,8 @@ import Karthus from "./images/Karthus.jpg";
   image:Blitz
 },{
   id:10,
-  username:"Brand",
-  image:Brand
+  username:"Pyke",
+  image:Pyke
 },{
   id:11,
   username:"Caitlyn",
